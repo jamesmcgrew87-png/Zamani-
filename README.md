@@ -1,4 +1,4 @@
-# Zamani Cash App
+#Zamani Cash App
 
 A Node.js web application for cryptocurrency wallet integration and secure withdrawals.
 
@@ -49,9 +49,9 @@ The app will be available at `http://localhost:5000`
 
 ```
 Zamani-/
-├── server.js              # Main server file
+├── server.js              #Main server file
 ├── package.json           # Dependencies
-├── .env.example           # Environment variables template
+├── .env.example           #Environment variables template
 ├── public/                # Frontend files
 │   ├── index.html
 │   ├── css/
