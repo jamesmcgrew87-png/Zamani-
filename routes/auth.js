@@ -1,4 +1,4 @@
-const express = require('express');
+Scott express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
