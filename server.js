@@ -20,15 +20,18 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/wallet', require('./routes/wallet'));
 app.use('/api/withdrawal', require('./routes/withdrawal'));
 
-/ Home route
+// Home route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Error handling middleware
+// Error handling middleware (must be last)
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: 'Server error', error: err.message });
+  res.status(err.status || 500).json({ 
+    message: err.message || 'Internal server error', 
+    error: process.env.NODE_ENV === 'production' ? {} : err.message 
+  });
 });
 
 // Start server
